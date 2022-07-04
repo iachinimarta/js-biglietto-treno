@@ -9,6 +9,7 @@
 
 ? SE il passeggero è minorenne
     Applico lo sconto del 20% al prezzo totale del biglietto
+    
 ? SE il passeggero è over 65
     Applico lo sconto del 40% al prezzo totale del biglietto
 
