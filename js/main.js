@@ -13,10 +13,10 @@ const prezzoBiglietto = costo1Chilometro * numeroChilometri;
 console.log('Prezzo biglietto intero: ' + prezzoBiglietto);
 
 const sconto20 = ((20 / 100) * prezzoBiglietto);
-let sconto20rounded = Math.round((sconto20 + Number.EPSILON) * 100) / 100;
+var sconto20rounded = Math.round((sconto20 + Number.EPSILON) * 100) / 100;
 
 const sconto40 = ((40 / 100) * prezzoBiglietto);
-let sconto40rounded = Math.round((sconto40 + Number.EPSILON) * 100) / 100;
+var sconto40rounded = Math.round((sconto40 + Number.EPSILON) * 100) / 100;
 
 
 if (etaPasseggero < 18) {
