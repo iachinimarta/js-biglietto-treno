@@ -1,32 +1,30 @@
 const numeroChilometri = parseInt (prompt('Quanti chilometri vuoi percorrere?'));
 
-console.log('Chilometri da percorrere: ' + numeroChilometri);
-
 const etaPasseggero = parseInt (prompt('Quanti hanni hai?'));
-
-console.log('Il passeggero ha: ' + etaPasseggero);
 
 const costo1Chilometro = 0.21;
 
-const prezzoBiglietto = costo1Chilometro * numeroChilometri;
+let prezzoBiglietto = costo1Chilometro * numeroChilometri;
 
-console.log('Prezzo biglietto intero: ' + prezzoBiglietto);
+let messaggio = '';
 
 const sconto20 = ((20 / 100) * prezzoBiglietto);
-let sconto20rounded = Math.round((sconto20 + Number.EPSILON) * 100) / 100;
 
 const sconto40 = ((40 / 100) * prezzoBiglietto);
-let sconto40rounded = Math.round((sconto40 + Number.EPSILON) * 100) / 100;
 
+console.log('Chilometri da percorrere: ' + numeroChilometri);
+console.log('Il passeggero ha: ' + etaPasseggero);
+console.log('Prezzo biglietto intero: ' + prezzoBiglietto);
 
 if (etaPasseggero < 18) {
-    const prezzo20 = (prezzoBiglietto - sconto20rounded);
-    alert ('Prezzo scontato per i minorenni: ' + prezzo20 + '€');
+    let prezzo20 = (prezzoBiglietto - sconto20);
+    messaggio = 'Prezzo scontato per i minorenni: ' + prezzo20.toFixed(2) + '€';
 } else if (etaPasseggero > 65) {
-    const prezzo40 = (prezzoBiglietto - sconto40rounded);
-    alert ('Prezzo scontato per over 65: ' + prezzo40 + ('€'));
+    let prezzo40 = (prezzoBiglietto - sconto40);
+    messaggio = 'Prezzo scontato per over 65: ' + prezzo40.toFixed(2) + '€';
 } else {
-    alert ('Prezzo del biglietto: ' + prezzoBiglietto + ('€'));
+    messaggio = 'Prezzo del biglietto: ' + prezzoBiglietto.toFixed(2) + '€';
 }
 
+alert (messaggio);
 
